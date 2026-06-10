@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 
 import { buildCli, cleanupCliHome, makeCliHome, runSkillrouter } from "./cli-helpers.js";
+import packageJson from "../../package.json" with { type: "json" };
 
 const homes: string[] = [];
 
@@ -23,6 +24,6 @@ describe("skillrouter built CLI artifact", () => {
 
     expect(artifact.startsWith("#!/usr/bin/env node")).toBe(true);
     expect(result.exitCode).toBe(0);
-    expect(result.stdout.trim()).toBe("0.0.0");
+    expect(result.stdout.trim()).toBe(packageJson.version);
   });
 });

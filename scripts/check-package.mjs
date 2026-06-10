@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { execFileSync } from "node:child_process";
 
-const allowedPaths = new Set(["dist/cli.js", "package.json", "router-skill/SKILL.md"]);
+const allowedPaths = new Set(["LICENSE", "README.md", "dist/cli.js", "package.json", "router-skill/SKILL.md"]);
 const forbiddenPrefixes = [".vscode/", "src/", "test/"];
 const forbiddenPaths = new Set(["tsconfig.json", "tsup.config.ts", "vitest.config.ts"]);
 

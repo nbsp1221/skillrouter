@@ -6,6 +6,7 @@ import { initializeLibrary, printInitResult } from "./commands/init.js";
 import { listCommand, printListResult } from "./commands/list.js";
 import { printSearchResult, searchCommand } from "./commands/search.js";
 import { printStatusResult, statusCommand } from "./commands/status.js";
+import packageJson from "../package.json" with { type: "json" };
 
 export function createProgram(): Command {
   const program = new Command();
@@ -13,7 +14,7 @@ export function createProgram(): Command {
   program
     .name("skillrouter")
     .description("Local trusted Agent Skill router for LLM agents")
-    .version("0.0.0");
+    .version(packageJson.version);
 
   program
     .command("init")
